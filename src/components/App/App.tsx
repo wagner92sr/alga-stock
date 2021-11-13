@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../shared/Button';
 import Container from '../../shared/Container';
 import Header from '../Header';
+import Input from '../../shared/input/Input';
 import './App.css';
 
 function TestComponent() {
@@ -9,6 +10,8 @@ function TestComponent() {
 }
 
 function App() {
+  const [street, setStreet] = useState('')
+
   return (
     <div className="App">
       <Header title="AlgaStock" />
@@ -20,6 +23,12 @@ function App() {
         >
           Alert
         </Button>
+        <Input
+          label="Street"
+          placeholder="E.g.: 15th Avenue"
+          value={street}
+          onChange={e => setStreet(e.target.value)}
+        />
       </Container>
     </div>
 
